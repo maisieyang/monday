@@ -1,0 +1,21 @@
+{
+  "name": "voisky",
+  "version": "1.2.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "pnpm esbuild src/** --bundle --outdir=lib --platform=node --external:esbuild",
+    "dev": "pnpm build --watch"
+  },
+  "keywords": [],
+  "author": "yangxiyue",
+  "license": "ISC",
+  "bin": {
+    "voisky": "bin/voisky.js"
+  },
+  "dependencies": {
+    "commander": "^11.0.0",
+    "esbuild": "^0.19.4",
+    "express": "^4.18.2"
+  }
+}

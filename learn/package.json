@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "hello": "node src/index.js"
+},
+  "keywords": [],
+  "author": "yangxiyue",
+  "license": "MIT",
+  "dependencies": {
+    "babel-standalone": "^6.26.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

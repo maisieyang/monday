@@ -1,0 +1,23 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "voisky",
+    "build": "pnpm esbuild src/** --bundle --outdir=www",
+    "dev": "voisky dev",
+    "serve": "cd www && serve"
+  },
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "voisky": "workspace:*"
+  },
+  "keywords": [],
+  "author": "yangxiyue",
+  "license": "ISC",
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
+}
