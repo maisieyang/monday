@@ -10,8 +10,11 @@
     "serve": "cd www && serve"
   },
   "dependencies": {
+    "@alita/flow": "^3.1.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-router": "^6.16.0",
+    "react-router-dom": "^6.16.0",
     "voisky": "workspace:*"
   },
   "keywords": [],
