@@ -1,0 +1,19 @@
+/* src/layouts/index.css */
+.voisky-header {
+  color: brown;
+}
+
+/* src/pages/home.css */
+.voisky-home {
+  font-size: 24px;
+}
+
+/* src/pages/user.css */
+.voisky-users {
+  color: yellowgreen;
+}
+
+/* src/pages/me.css */
+.voisky-me {
+  color: royalblue;
+}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './home.css';
 
 const Hello = () => {
     const [text, setText] = React.useState('Hello Malita!');
@@ -11,7 +12,7 @@ const Hello = () => {
                     setText('Hi!');
                 }}
             > {text} </p>
-            <p>{count}</p>
+            <p className='voisky-home'>{count}</p>
             <p><button onClick={() => setCount(count => count + 1)}> Click Me! Add!</button></p>
             <Link to='/users'>go to Users</Link>
         </>);

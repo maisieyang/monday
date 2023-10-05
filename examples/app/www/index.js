@@ -26192,14 +26192,14 @@
     }, [callback, capture]);
   }
 
-  // src/layouts/layout.tsx
+  // src/layouts/index.tsx
   var import_react = __toESM(require_react());
   var import_flow = __toESM(require_dist());
   var Layout = () => {
     const { pathname } = useLocation();
-    return /* @__PURE__ */ import_react.default.createElement(import_flow.Page, null, /* @__PURE__ */ import_react.default.createElement(import_flow.Header, null, "\u5F53\u524D\u8DEF\u7531: ", pathname), /* @__PURE__ */ import_react.default.createElement(import_flow.Content, null, /* @__PURE__ */ import_react.default.createElement(Outlet, null)));
+    return /* @__PURE__ */ import_react.default.createElement(import_flow.Page, null, /* @__PURE__ */ import_react.default.createElement(import_flow.Header, null, /* @__PURE__ */ import_react.default.createElement("div", { className: "voisky-header" }, "\u5F53\u524D\u8DEF\u7531: ", pathname)), /* @__PURE__ */ import_react.default.createElement(import_flow.Content, null, /* @__PURE__ */ import_react.default.createElement(Outlet, null)));
   };
-  var layout_default = Layout;
+  var layouts_default = Layout;
 
   // src/pages/home.tsx
   var import_react2 = __toESM(require_react());
@@ -26216,27 +26216,27 @@
       " ",
       text,
       " "
-    ), /* @__PURE__ */ import_react2.default.createElement("p", null, count), /* @__PURE__ */ import_react2.default.createElement("p", null, /* @__PURE__ */ import_react2.default.createElement("button", { onClick: () => setCount((count2) => count2 + 1) }, " Click Me! Add!")), /* @__PURE__ */ import_react2.default.createElement(Link, { to: "/users" }, "go to Users"));
+    ), /* @__PURE__ */ import_react2.default.createElement("p", { className: "voisky-home" }, count), /* @__PURE__ */ import_react2.default.createElement("p", null, /* @__PURE__ */ import_react2.default.createElement("button", { onClick: () => setCount((count2) => count2 + 1) }, " Click Me! Add!")), /* @__PURE__ */ import_react2.default.createElement(Link, { to: "/users" }, "go to Users"));
   };
   var home_default = Hello;
 
   // src/pages/user.tsx
   var import_react3 = __toESM(require_react());
   var Users = () => {
-    return /* @__PURE__ */ import_react3.default.createElement(import_react3.default.Fragment, null, /* @__PURE__ */ import_react3.default.createElement("p", null, " Users "), /* @__PURE__ */ import_react3.default.createElement(Link, { to: "/me" }, "Me"));
+    return /* @__PURE__ */ import_react3.default.createElement(import_react3.default.Fragment, null, /* @__PURE__ */ import_react3.default.createElement("p", { className: "voisky-users" }, " Users "), /* @__PURE__ */ import_react3.default.createElement(Link, { to: "/me" }, "Me"));
   };
   var user_default = Users;
 
   // src/pages/me.tsx
   var import_react4 = __toESM(require_react());
   var Me = () => {
-    return /* @__PURE__ */ import_react4.default.createElement(import_react4.default.Fragment, null, /* @__PURE__ */ import_react4.default.createElement("p", null, " Me "), " ", /* @__PURE__ */ import_react4.default.createElement(Link, { to: "/" }, "go Home"));
+    return /* @__PURE__ */ import_react4.default.createElement(import_react4.default.Fragment, null, /* @__PURE__ */ import_react4.default.createElement("p", { className: "voisky-me" }, " Me "), " ", /* @__PURE__ */ import_react4.default.createElement(Link, { to: "/" }, "go Home"));
   };
   var me_default = Me;
 
   // src/index.tsx
   var App = () => {
-    return /* @__PURE__ */ import_react5.default.createElement(HashRouter, null, /* @__PURE__ */ import_react5.default.createElement(Routes, null, /* @__PURE__ */ import_react5.default.createElement(Route, { path: "/", element: /* @__PURE__ */ import_react5.default.createElement(layout_default, null) }, /* @__PURE__ */ import_react5.default.createElement(Route, { path: "/", element: /* @__PURE__ */ import_react5.default.createElement(home_default, null) }), /* @__PURE__ */ import_react5.default.createElement(Route, { path: "/users", element: /* @__PURE__ */ import_react5.default.createElement(user_default, null) }), /* @__PURE__ */ import_react5.default.createElement(Route, { path: "/me", element: /* @__PURE__ */ import_react5.default.createElement(me_default, null) }))));
+    return /* @__PURE__ */ import_react5.default.createElement(HashRouter, null, /* @__PURE__ */ import_react5.default.createElement(Routes, null, /* @__PURE__ */ import_react5.default.createElement(Route, { path: "/", element: /* @__PURE__ */ import_react5.default.createElement(layouts_default, null) }, /* @__PURE__ */ import_react5.default.createElement(Route, { path: "/", element: /* @__PURE__ */ import_react5.default.createElement(home_default, null) }), /* @__PURE__ */ import_react5.default.createElement(Route, { path: "/users", element: /* @__PURE__ */ import_react5.default.createElement(user_default, null) }), /* @__PURE__ */ import_react5.default.createElement(Route, { path: "/me", element: /* @__PURE__ */ import_react5.default.createElement(me_default, null) }))));
   };
   var root = import_react_dom.default.createRoot(document.getElementById("malita"));
   root.render(import_react5.default.createElement(App));
