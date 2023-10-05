@@ -1084,7 +1084,7 @@
             }
             return dispatcher.useContext(Context);
           }
-          function useState3(initialState) {
+          function useState4(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1886,7 +1886,7 @@
           exports.useMemo = useMemo3;
           exports.useReducer = useReducer;
           exports.useRef = useRef3;
-          exports.useState = useState3;
+          exports.useState = useState4;
           exports.useSyncExternalStore = useSyncExternalStore;
           exports.useTransition = useTransition;
           exports.version = ReactVersion;
@@ -2382,9 +2382,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React4 = require_react();
+          var React8 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React4.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React8.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -3989,7 +3989,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React4.Children.forEach(props.children, function(child) {
+                  React8.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -12436,7 +12436,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React4.Component().refs;
+          var emptyRefsObject = new React8.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -23847,7 +23847,7 @@
       Object.defineProperty(exports, "__esModule", { value: true });
       exports.withErrorBoundary = exports.ErrorBoundary = exports.UNKNOWN_COMPONENT = exports.isAtLeastReact17 = void 0;
       var hoist_non_react_statics_1 = __importDefault(require_hoist_non_react_statics_cjs());
-      var React4 = __importStar(require_react());
+      var React8 = __importStar(require_react());
       function isAtLeastReact17(version) {
         var major = version.match(/^([^.]+)/);
         return major !== null && parseInt(major[0]) >= 17;
@@ -23883,7 +23883,7 @@
           ErrorBoundary2.prototype.componentDidCatch = function(error, _a) {
             var componentStack = _a.componentStack;
             var _b = this.props, beforeCapture = _b.beforeCapture, onError = _b.onError;
-            if (isAtLeastReact17(React4.version)) {
+            if (isAtLeastReact17(React8.version)) {
               var errorBoundaryError = new Error(error.message);
               errorBoundaryError.name = "React ErrorBoundary ".concat(errorBoundaryError.name);
               errorBoundaryError.stack = componentStack;
@@ -23926,7 +23926,7 @@
               } else {
                 element = fallback;
               }
-              if (React4.isValidElement(element)) {
+              if (React8.isValidElement(element)) {
                 return element;
               }
               if (fallback) {
@@ -23940,7 +23940,7 @@
             return children;
           };
           return ErrorBoundary2;
-        }(React4.Component)
+        }(React8.Component)
       );
       exports.ErrorBoundary = ErrorBoundary;
       function withErrorBoundary(WrappedComponent, errorBoundaryOptions) {
@@ -23948,10 +23948,10 @@
         var Wrapped = function(props) {
           return (
             // @ts-ignore
-            React4.createElement(
+            React8.createElement(
               ErrorBoundary,
               __assign({}, errorBoundaryOptions),
-              React4.createElement(WrappedComponent, __assign({}, props))
+              React8.createElement(WrappedComponent, __assign({}, props))
             )
           );
         };
@@ -24370,8 +24370,8 @@
     }
   });
 
-  // src/index.jsx
-  var import_react = __toESM(require_react());
+  // src/index.tsx
+  var import_react5 = __toESM(require_react());
   var import_react_dom = __toESM(require_react_dom());
 
   // ../../node_modules/.pnpm/react-router-dom@6.16.0_react-dom@18.2.0_react@18.2.0/node_modules/react-router-dom/dist/index.js
@@ -26192,15 +26192,21 @@
     }, [callback, capture]);
   }
 
-  // src/index.jsx
+  // src/layouts/layout.tsx
+  var import_react = __toESM(require_react());
   var import_flow = __toESM(require_dist());
   var Layout = () => {
     const { pathname } = useLocation();
     return /* @__PURE__ */ import_react.default.createElement(import_flow.Page, null, /* @__PURE__ */ import_react.default.createElement(import_flow.Header, null, "\u5F53\u524D\u8DEF\u7531: ", pathname), /* @__PURE__ */ import_react.default.createElement(import_flow.Content, null, /* @__PURE__ */ import_react.default.createElement(Outlet, null)));
   };
+  var layout_default = Layout;
+
+  // src/pages/home.tsx
+  var import_react2 = __toESM(require_react());
   var Hello = () => {
-    const [text, setText] = import_react.default.useState("Hello Malita!");
-    return /* @__PURE__ */ import_react.default.createElement(import_react.default.Fragment, null, /* @__PURE__ */ import_react.default.createElement(
+    const [text, setText] = import_react2.default.useState("Hello Malita!");
+    const [count, setCount] = (0, import_react2.useState)(0);
+    return /* @__PURE__ */ import_react2.default.createElement(import_react2.default.Fragment, null, /* @__PURE__ */ import_react2.default.createElement(
       "p",
       {
         onClick: () => {
@@ -26210,19 +26216,30 @@
       " ",
       text,
       " "
-    ), /* @__PURE__ */ import_react.default.createElement(Link, { to: "/users" }, "Users"));
+    ), /* @__PURE__ */ import_react2.default.createElement("p", null, count), /* @__PURE__ */ import_react2.default.createElement("p", null, /* @__PURE__ */ import_react2.default.createElement("button", { onClick: () => setCount((count2) => count2 + 1) }, " Click Me! Add!")), /* @__PURE__ */ import_react2.default.createElement(Link, { to: "/users" }, "go to Users"));
   };
+  var home_default = Hello;
+
+  // src/pages/user.tsx
+  var import_react3 = __toESM(require_react());
   var Users = () => {
-    return /* @__PURE__ */ import_react.default.createElement(import_react.default.Fragment, null, /* @__PURE__ */ import_react.default.createElement("p", null, " Users "), /* @__PURE__ */ import_react.default.createElement(Link, { to: "/me" }, "Me"));
+    return /* @__PURE__ */ import_react3.default.createElement(import_react3.default.Fragment, null, /* @__PURE__ */ import_react3.default.createElement("p", null, " Users "), /* @__PURE__ */ import_react3.default.createElement(Link, { to: "/me" }, "Me"));
   };
+  var user_default = Users;
+
+  // src/pages/me.tsx
+  var import_react4 = __toESM(require_react());
   var Me = () => {
-    return /* @__PURE__ */ import_react.default.createElement(import_react.default.Fragment, null, /* @__PURE__ */ import_react.default.createElement("p", null, " Me "), " ", /* @__PURE__ */ import_react.default.createElement(Link, { to: "/" }, "go Home"));
+    return /* @__PURE__ */ import_react4.default.createElement(import_react4.default.Fragment, null, /* @__PURE__ */ import_react4.default.createElement("p", null, " Me "), " ", /* @__PURE__ */ import_react4.default.createElement(Link, { to: "/" }, "go Home"));
   };
+  var me_default = Me;
+
+  // src/index.tsx
   var App = () => {
-    return /* @__PURE__ */ import_react.default.createElement(HashRouter, null, /* @__PURE__ */ import_react.default.createElement(Routes, null, /* @__PURE__ */ import_react.default.createElement(Route, { path: "/", element: /* @__PURE__ */ import_react.default.createElement(Layout, null) }, /* @__PURE__ */ import_react.default.createElement(Route, { path: "/", element: /* @__PURE__ */ import_react.default.createElement(Hello, null) }), /* @__PURE__ */ import_react.default.createElement(Route, { path: "/users", element: /* @__PURE__ */ import_react.default.createElement(Users, null) }), /* @__PURE__ */ import_react.default.createElement(Route, { path: "/me", element: /* @__PURE__ */ import_react.default.createElement(Me, null) }))));
+    return /* @__PURE__ */ import_react5.default.createElement(HashRouter, null, /* @__PURE__ */ import_react5.default.createElement(Routes, null, /* @__PURE__ */ import_react5.default.createElement(Route, { path: "/", element: /* @__PURE__ */ import_react5.default.createElement(layout_default, null) }, /* @__PURE__ */ import_react5.default.createElement(Route, { path: "/", element: /* @__PURE__ */ import_react5.default.createElement(home_default, null) }), /* @__PURE__ */ import_react5.default.createElement(Route, { path: "/users", element: /* @__PURE__ */ import_react5.default.createElement(user_default, null) }), /* @__PURE__ */ import_react5.default.createElement(Route, { path: "/me", element: /* @__PURE__ */ import_react5.default.createElement(me_default, null) }))));
   };
   var root = import_react_dom.default.createRoot(document.getElementById("malita"));
-  root.render(import_react.default.createElement(App));
+  root.render(import_react5.default.createElement(App));
 })();
 /*! Bundled license information:
 

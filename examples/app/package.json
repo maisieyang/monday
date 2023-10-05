@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "voisky",
-    "build": "pnpm esbuild src/** --bundle --outdir=www",
+    "build": "pnpm esbuild src/index.tsx --bundle --outdir=www",
     "dev": "voisky dev",
     "serve": "cd www && serve"
   },
